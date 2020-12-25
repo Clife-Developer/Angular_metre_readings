@@ -1,0 +1,20 @@
+{
+  "resource": [
+    {
+      "apartment": "gagarina 3",
+      "waterMeter": "324567890",
+      "tariffDaily": "34567",
+      "tariffNight": "34567",
+      "gasMeter": "4567",
+      "id": 0
+    },
+    {
+      "apartment": "gagarina 77",
+      "waterMeter": "56230265620",
+      "tariffDaily": "3165",
+      "tariffNight": "31651",
+      "gasMeter": "78120",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row justify-content-center pt-4">
+        <div class="col-xs-6 border p-4">
+            <h1 class="bg-primary p-3 mb-4 text-light rounded">Показания счетчиков</h1>
+            <form class="text-secondary" #apartForm="ngForm" (ngSubmit)="onSubmit(apartForm)">
+                    <div class="form-inline">
+                        <label for="">квартира:</label>
+                        <input name="apartment" value="" ngModel class="form-control" type="text" required/>
+                    </div>
+                    <div class="form-group">
+                        <hr>
+                        <h2>Вода</h2>
+                        <label for="">показания счетчика:</label>
+                        <input name="waterMeter"  ngModel class="form-control" type="text" required>
+                        <hr>
+                    </div>
+                    <div class="row p-3">
+                        <h2>Электричество</h2>
+                    </div>
+                    <div class="row justify-content-center">
+                      
+                        <div class="col-xs-6 form-group">
+                            <label for="">Тариф дневной:</label>
+                            <input name="tariffDaily" ngModel class="w-75 form-control" type="text" required>    
+                        </div>
+                        <div class="col-xs-6 form-group">
+                            <label for="">Тариф ночной:</label>
+                            <input name="tariffNight" ngModel class="w-75 form-control" type="text" required>    
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <hr>
+                        <h2>Газ</h2>
+                        <label for="">показания счетчика:</label>
+                        <input name="gasMeter" ngModel class="form-control" type="text" required>
+                    </div>
+                   <div class="form-group">
+                        <button class="btn btn-primary m-1" [disabled]="!apartForm.valid" type="submit">Разместить</button>
+                        <button class="btn btn-primary m-1" (click)="view()" type="submit">Предыдущие показания счетчика</button>
+                  </div>
+            </form>
+        </div>
+
+        <div class="col-xs-6 border p-4">
+            <div class="card" style="width: 18rem;" *ngFor="let det of details">
+                <div class="card-header">
+                    Предыдущие показания счетчика
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item text-primary bg-muted"><b>квартира:</b> {{det.apartment | uppercase}}</li>
+                  <li class="list-group-item text-primary bg-muted"><b>показания счетчика:</b> {{det.waterMeter | uppercase}}</li>
+                  <li class="list-group-item text-primary bg-muted"><b>Тариф дневной:</b> {{det.tariffDaily | uppercase}}</li>
+                  <li class="list-group-item text-primary bg-muted"><b>Тариф ночной:</b> {{det.tariffNight | uppercase}}</li>
+                  <li class="list-group-item text-primary bg-muted"><b>показания счетчика:</b> {{det.gasMeter | uppercase}}</li>
+                </ul>
+              </div>
+        </div>
+    </div>
+</div>
